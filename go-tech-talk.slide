@@ -1,0 +1,43 @@
+What is Go?
+A quick tour
+12 Apr 2016
+Tags: foo, bar, baz
+
+Josh Finken
+Reality Capture and Processing, HERE
+josh.finken@here.com
+
+* Quick Overview of:
+
+- History and Semantics 
+- Composition over Inheritance
+- Concurrency
+- Tools and Dev Environments
+- Who's Using Go
+
+* History and Semantics
+
+- Conceived late 2007 at Google. Long since open-sourced.
+- For people who write, read, debug and maintain large software systems.
+- Designed to work at scale, large programs with large numbers of dependencies, large numbers of programmers.
+- It is about software engineering not about programming language research.
+- GOAL:  be productive now with large software systems.
+
+* Semantics
+
+- Procedural, of the C-family, modern.
+- Compiled, statically typed.
+- No pointer arithmetic!  
+- Concurrency:  native, robust, simple approach at the language level.
+- Garbage-collected. 
+
+* As of Go 1.6: ~3ms GC pause time [1]:
+
+.image images/gcgotip.png
+
+.link http://talks.golang.org/2016/state-of-go.slide#38 [1] The State of Go
+
+* Composition over inheritance:
+
+- No concept of polymorphism: no _inherits_, _implements_, nor _extends_ keywords 
+- Duck typing: _interface_
