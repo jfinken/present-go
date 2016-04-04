@@ -59,5 +59,22 @@ josh.finken@here.com
 * Concurrency
 
 - Native simple approach at the language level: _goroutine_
-- Sorta like lightweight threads.
+- Akin to lightweight threads.
 - Are a variant of [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][Communicating Sequential Processes]], a dual of the Actor model.
+- Message-passing through a non-buffered channel:  rendezvous point
+- Message-passing through a buffered channel: asynchronous 
+
+* Concurrency: goroutines
+
+.play concurrency_goroutine.go
+
+* Concurrency: channels
+
+.play concurrency_channels.go
+
+* Concurrency: buffered channels
+
+- Sends to a buffered channel block only when the buffer is full.  
+- Receives block when the buffer is empty.
+
+.play concurrency_buffered_channels.go
