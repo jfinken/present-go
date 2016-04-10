@@ -1,0 +1,73 @@
+What is Go?
+
+A dual of complexity
+
+12 Apr 2016
+Tags: oss, lang, systems programming
+
+Josh Finken
+Reality Capture and Processing, HERE
+josh.finken@here.com
+
+* Quick Overview of:
+
+- History and Origins
+- Semantics
+- Tools and Dev Environments
+
+* History and Origins
+
+- Conceived late 2007 at Google. Rob Pike, Ken Thompson. 
+- A systems language: write, read, debug and maintain large software systems.
+- Designed for scale: large programs with large numbers of dependencies, large numbers of programmers.
+- Stated goal: _Clean_ _procedural_ _language_ _designed_ _for_ _scalable_ _cloud_ _software._ [1]
+
+.link https://talks.golang.org/2015/simplicity-is-complicated.slide#15 [1] Simplicity is complicated, Rob Pike.
+
+* Semantics
+
+- Small, simple and opinionated. 
+- Compiled, statically typed.  Extremely fast compilations.
+- Concurrency at the language level:  native, robust, designed for multicore machines.
+- Garbage-collected. 
+
+* Simplicity
+
+- As of Go 1, the language is fixed: 
+.link https://golang.org/doc/go1compat Go 1 Compatibility Promise.
+- Go will not compete on features.
+- Too many features, one spends time choosing which ones to use.
+- Implement, refine, possibly rethink, redo. 
+
+* Readability
+
+- Is it possible the code is harder to understand because it is using a more complex language?
+- Features add complexity.
+- Preferable to have just one way, or at least fewer, simpler ways.
+- Opinionated.
+
+* A few features
+
+- Garbage Collection
+- Concurrency 
+- Interfaces
+
+* As of Go 1.6: ~3ms GC pause time [1]:
+
+.image images/gcgotip.png
+
+.link http://talks.golang.org/2016/state-of-go.slide#38 [1] The State of Go
+
+* Concurrency 
+
+- goroutines
+- foobar
+
+* Interfaces
+
+- Perhaps Go's more powerful feature
+- No concept of class inheritance: no _inherits_, _implements_, nor _extends_ keywords 
+- Structural (aka duck) typing: _interface_
+- Create abstractions by considering the _behavior_ that is common between datatypes
+- Enables true component architectures and library design.
+
