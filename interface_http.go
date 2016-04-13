@@ -1,9 +1,9 @@
 /START2 OMIT
-type MyEntity interface {
+type MyEntityUnmarshaller interface {
     UnmarshalHTTP(*http.Request) error
 }
 
-func GetEntity(r *http.Request, v MyEntity) error {
+func GetEntity(r *http.Request, v MyEntityUnmarshaller) error {
     return v.UnmarshalHTTP(r)
 }
 
