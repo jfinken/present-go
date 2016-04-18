@@ -44,17 +44,26 @@ josh.finken@here.com
 
 .code interface_animal.go
 
-* A more real-world example:
+* A more real-world example with io:
 
-.code -numbers interface_http.go /START2 OMIT/,/END2 OMIT/
+.code interface_from_package_io.go
 
-* Compose:
+* A more real-world example with io:
 
-- We now we can define an arbitrary number of types, each unpacks from an HTTP request. 
-- It is now up to _Banana_ and _Eisenhower_ to decide how they may be represented. 
-- Then, we can build around the MyEntity type to create things like generic HTTP handlers.
+.play interface_readwriter.go
 
-.code -numbers interface_http.go /START1 OMIT/,/END1 OMIT/
+* Compose: embedding
+
+- A type can be embedded in another type
+- Akin to "super" being called automatically
+
+.code compose_structs.go /START1 OMIT/,/END1 OMIT/
+
+* Compose: 
+
+- Field and methods are promoted 
+
+.code compose_structs.go /START2 OMIT/,/END2 OMIT/
 
 * Concurrency
 
