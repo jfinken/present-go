@@ -8,7 +8,7 @@ import (
 )
 func main() {
     var thingy io.ReadWriter
-    // os.Stdout implements Writer (and Reader TBH), thus this assignment is not a compile-time error
+    // os.Stdout implements Writer (and Reader), thus this assignment is not a compile error
     thingy = os.Stdout
     
     r1 := strings.NewReader("first reader\n")

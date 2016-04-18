@@ -2,18 +2,21 @@ What is Go?
 
 A cultural agenda of radical simplicity.
 
-12 Apr 2016
+19 Apr 2016
 Tags: oss, lang, systems programming
 
-Josh Finken
+Josh Finken, Rob King
 Reality Capture and Processing, HERE
 josh.finken@here.com
+robert.1.king@here.com
 
 * Quick Overview of:
 
 - History and Origins
 - Semantics
-- Tools and Dev Environments
+- Readability
+- Simplicity
+- A few features
 
 * History and Origins
 
@@ -27,10 +30,18 @@ josh.finken@here.com
 
 * Semantics
 
-- Small, simple and opinionated. 
+- Small, simple and opinionated without sacrificing sophistication. 
 - Compiled, statically typed.  
+- Of the C-family (syntax), but also Pascal/Modula/Oberon families.
 - Concurrency at the language level:  native, robust, designed for multicore machines.
 - Garbage-collected. 
+
+* Readability
+
+- Features _may_ make the language better but certainly makes it bigger.
+- Features add complexity.
+- Readability has been made paramount.
+- Opinionated: preferable to have just one way, or at least fewer, simpler ways.
 
 * Simplicity: go will not compete on features
 
@@ -46,18 +57,11 @@ josh.finken@here.com
 - No execeptions.
 - No function annotations.  To name a few...
 
-* Readability
-
-- Is it possible the code is harder to understand because it is using a more complex language?
-- Features add complexity.
-- Preferable to have just one way, or at least fewer, simpler ways.
-- Opinionated.
-
-* A few features
+* Ok fine, a few features
 
 - Garbage Collection
-- Concurrency 
 - Interfaces
+- Concurrency 
 
 * As of Go 1.6: ~3ms GC pause time [1]:
 
@@ -65,16 +69,58 @@ josh.finken@here.com
 
 .link http://talks.golang.org/2016/state-of-go.slide#38 [1] The State of Go
 
-* Concurrency 
-
-- goroutines
-- foobar
-
 * Interfaces
 
-- Perhaps Go's more powerful feature
-- No concept of class inheritance: no _inherits_, _implements_, nor _extends_ keywords 
-- Structural (aka duck) typing: _interface_
-- Create abstractions by considering the _behavior_ that is common between datatypes
+- Perhaps Go's more powerful feature.
+- No concept of class inheritance: no _inherits_, _implements_, nor _extends_ keywords .
+- Structural (aka duck) typing: _interface_.
+- Structs represent data while interfaces represent behavioral abstraction.
 - Enables true component architectures and library design.
 
+* A quck OO-based example:
+
+.code interface_animal.go
+
+* A more real-world example with io:
+
+.code interface_from_package_io.go
+
+* A more real-world example with io:
+
+.play interface_readwriter.go
+
+* Compose: embedding
+
+- A type can be embedded in another type
+- Akin to "super" being called automatically
+
+.code compose_structs.go /START1 OMIT/,/END1 OMIT/
+
+* Compose: 
+
+- Field and methods are promoted 
+
+.code compose_structs.go /START2 OMIT/,/END2 OMIT/
+
+* Concurrency
+
+- Native simple approach at the language level: _goroutine_
+- Akin to lightweight threads.
+- Are a variant of [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][Communicating Sequential Processes]], a dual of the Actor model.
+- Message-passing through a non-buffered channel:  rendezvous point
+- Message-passing through a buffered channel: asynchronous 
+
+* Concurrency: goroutines
+
+.play concurrency_goroutine.go
+
+* Concurrency: channels
+
+.play concurrency_channels.go
+
+* Concurrency: buffered channels
+
+- Sends to a buffered channel block only when the buffer is full.  
+- Receives block when the buffer is empty.
+
+.play concurrency_buffered_channels.go
