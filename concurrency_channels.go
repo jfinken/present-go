@@ -18,5 +18,5 @@ func main() {
     go sum(s[len(s)/2:], c) // [-9, 4, 0]
     x, y := <-c, <-c        // receive from c
 
-    fmt.Println(x, y, x+y)
+    fmt.Printf("x=%d, y=%d, x+y=%d", x, y, x+y)
 }

@@ -29,6 +29,7 @@ adm.User.SendEmail("hi", "there")
 // Or take advantage of type promotion 
 adm.Name
 adm.SendEmail("hi", "there")
+
 // Likewise, you also have Admin's own abilities not available to type User
 adm.UnlockGate()
 /END2 OMIT

@@ -43,7 +43,7 @@ robert.1.king@here.com
 - Readability has been made paramount.
 - Opinionated: preferable to have just one way, or at least fewer, simpler ways.
 
-* Simplicity: go will not compete on features
+* Simplicity: Go will not compete on features
 
 - As of Go 1, the language is fixed: 
 .link https://golang.org/doc/go1compat Go 1 Compatibility Promise.
@@ -72,14 +72,14 @@ robert.1.king@here.com
 * Interfaces
 
 - Perhaps Go's more powerful feature.
-- No concept of class inheritance: no _inherits_, _implements_, nor _extends_ keywords .
+- No concept of class inheritance: no _inherits_, _implements_, nor _extends_ keywords.
 - Structural (aka duck) typing: _interface_.
 - Structs represent data while interfaces represent behavioral abstraction.
 - Enables true component architectures and library design.
 
 * A quck OO-based example:
 
-.code interface_animal.go
+.play interface_animal.go
 
 * A more real-world example with io:
 
@@ -105,8 +105,8 @@ robert.1.king@here.com
 * Concurrency
 
 - Native simple approach at the language level: _goroutine_
-- Akin to lightweight threads.
-- Are a variant of [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][Communicating Sequential Processes]], a dual of the Actor model.
+- Akin to lightweight threads
+- Are a variant of [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][Communicating Sequential Processes]], a dual of the Actor model
 - Message-passing through a non-buffered channel:  rendezvous point
 - Message-passing through a buffered channel: asynchronous 
 
