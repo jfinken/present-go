@@ -57,11 +57,19 @@ robert.1.king@here.com
 - No execeptions.
 - No function annotations.  To name a few...
 
-* Ok fine, a few features
+* Ok, a few features
 
 - Garbage Collection
 - Interfaces
 - Concurrency 
+
+* Garbage Collection
+
+- There is no separate virtual machine 
+- GC occurs concurrently within your application
+- Single tuning knob (if you really need to): total heap size relative to reachable objects
+
+.link https://blog.golang.org/go15gc Further reading: Go GC: Prioritizing low latency and simplicity 
 
 * As of Go 1.6: ~3ms GC pause time [1]:
 
@@ -71,7 +79,7 @@ robert.1.king@here.com
 
 * Interfaces
 
-- Perhaps Go's more powerful feature.
+- A very powerful feature.
 - No concept of class inheritance: no _inherits_, _implements_, nor _extends_ keywords.
 - Structural (aka duck) typing: _interface_.
 - Structs represent data while interfaces represent behavioral abstraction.
@@ -120,7 +128,7 @@ robert.1.king@here.com
 
 * Concurrency: buffered channels
 
-- Sends to a buffered channel block only when the buffer is full.  
+- Sends to a buffered channel block when the buffer is full.  
 - Receives block when the buffer is empty.
 
 .play concurrency_buffered_channels.go
