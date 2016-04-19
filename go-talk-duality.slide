@@ -73,7 +73,7 @@ robert.1.king@here.com
 
 * As of Go 1.6: ~3ms GC pause time [1]:
 
-.image images/gcgotip.png
+.image images/gc_pause_times_scaled.png
 
 .link http://talks.golang.org/2016/state-of-go.slide#38 [1] The State of Go
 
