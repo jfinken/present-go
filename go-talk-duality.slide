@@ -41,14 +41,14 @@ robert.1.king@here.com
 - Features _may_ make the language better but certainly makes it bigger.
 - Features add complexity.
 - Readability has been made paramount.
+- Too many features, one spends time choosing which ones to use.
+- Implement, refine, possibly rethink, redo. 
 - Opinionated: preferable to have just one way, or at least fewer, simpler ways.
 
 * Simplicity: Go will not compete on features
 
 - As of Go 1, the language is fixed: 
 .link https://golang.org/doc/go1compat Go 1 Compatibility Promise.
-- Too many features, one spends time choosing which ones to use.
-- Implement, refine, possibly rethink, redo. 
 - No implicit numeric conversions.
 - No constructors or destructors.
 - No operator overloading.
@@ -56,6 +56,8 @@ robert.1.king@here.com
 - No generics.
 - No execeptions.
 - No function annotations.  To name a few...
+
+.link https://docs.google.com/document/d/1vrAy9gMpMoS3uaVphB32uVXX4pi-HnNjkMEgyAHX4N4/edit#heading=h.vuko0u3txoew No Generics??
 
 * Ok, a few features
 
@@ -73,9 +75,15 @@ robert.1.king@here.com
 
 * As of Go 1.6: ~3ms GC pause time [1]:
 
-.image images/gc_pause_times_scaled.png
+.image images/gcgotip.png
 
 .link http://talks.golang.org/2016/state-of-go.slide#38 [1] The State of Go
+
+* GC performance improvements
+
+.image images/gc_pause_times_scaled.png
+
+.link http://talks.golang.org/2016/state-of-go.slide#36 [1] The State of Go
 
 * Interfaces
 
@@ -85,7 +93,7 @@ robert.1.king@here.com
 - Structs represent data while interfaces represent behavioral abstraction.
 - Enables true component architectures and library design.
 
-* A quck OO-based example:
+* A quick OO-based example:
 
 .play interface_animal.go
 
@@ -117,6 +125,7 @@ robert.1.king@here.com
 - Are a variant of [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][Communicating Sequential Processes]], a dual of the Actor model
 - Message-passing through a non-buffered channel:  rendezvous point
 - Message-passing through a buffered channel: asynchronous 
+- "Don't communicate by sharing memory, share memory by communicating."
 
 * Concurrency: goroutines
 
